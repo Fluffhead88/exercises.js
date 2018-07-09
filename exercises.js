@@ -51,11 +51,23 @@
   // Write a function rovarspraket() that will translate a text into "rÃ¶varsprÃ¥ket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
   // ---------------------
 
-  // function rovarspraket(phrase) {
-  //   if
-  // }
+  function rovarspraket(phrase) {
+    var answer = "";
+    var vowels = ['a', 'e', 'i', 'o', 'u'];
 
+    for (var x = 0; x < phrase.length; x++) {
+      var y = phrase[x];
+      if (vowels.indexOf(y) != -1) {
+        answer = (answer + y)
+      } else {
+        answer = (answer + "o" + answer)
+      };
+      return answer;
 
+    }
+  }
+
+  console.assert(rovarspraket("this is fun") === "tothohisos isos fofunon", "function rovarspraket is incorrect");
 
   // ---------------------
   // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
@@ -131,8 +143,18 @@
   // Define a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
   // ---------------------
 
-
-
+  function charFreq(string) {
+    answer = {};
+    for (var i = 0; i < string.length; i++) {
+      if (answer[string[i]]) {
+        answer[string[i]] += 1;
+      } else {
+        answer[string[i]] = 1;
+      }
+    }
+    return answer;
+  }
+  console.assert(charFreq("abbabcbdbabdbdbabababcbcbab"))
 
 
 })();
