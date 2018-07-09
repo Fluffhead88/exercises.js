@@ -99,7 +99,7 @@
 
   function findLongestWord(wordList) {
     var len = '';
-    // checks each word and if it's greater than the previous word, it replaces length with that number 
+    // checks each word and if it's greater than the previous word, it replaces length with that number
     wordList.forEach(function(word) {
       if (word.length > len) {
         len = word.length;
@@ -116,10 +116,17 @@
   // Define a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
   // ---------------------
 
+  function filterLongWords(words, i) {
+    var answer = [];
+    words.forEach(function(x) {
+      if (x.length > i) {
+        answer.push(x)
+      };
+    });
+    return answer;
+  }
 
-
-
-
+  console.assert(filterLongWords(['Turkey', 'Ham', 'Chicken', 'Beef'], 4).length === 2, 'function filterLongWords incorrect')
   // ---------------------
   // Define a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
   // ---------------------
